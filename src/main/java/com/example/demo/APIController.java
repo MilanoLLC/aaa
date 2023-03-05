@@ -40,6 +40,7 @@ public class APIController {
 							ResponseBody  response = client.newCall(request).execute().body();
 
 							String json = response.string() ; 
+							
 							ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 							Res res = objectMapper.readValue(json, Res.class);
 							
