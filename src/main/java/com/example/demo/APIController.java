@@ -24,7 +24,7 @@ public class APIController {
 			@RequestParam(name = "firstName") String  firstName,
 			@RequestParam(name = "lastName") String  lastName,
 			@RequestParam(name = "password") String password ,
-			@RequestParam(name = "phone") int   phone
+			@RequestParam(name = "phone") long   phone
 			) {
 		try {
 					OkHttpClient client = new OkHttpClient().newBuilder()
