@@ -24,13 +24,14 @@ public class APIController {
 			@RequestParam(name = "firstName") String  firstName,
 			@RequestParam(name = "lastName") String  lastName,
 			@RequestParam(name = "password") String password ,
-			@RequestParam(name = "phone") long   phone
+			@RequestParam(name = "phone") long   phone,
+			@RequestParam(name = "ip") String ip
 			) {
 		try {
 					OkHttpClient client = new OkHttpClient().newBuilder()
 							  .build();
 							MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-							RequestBody body = RequestBody.create(mediaType, "email="+email+"&firstName="+firstName+"&lastName="+lastName+"&password="+password+"&phone="+phone);
+							RequestBody body = RequestBody.create(mediaType, "email="+email+"&firstName="+firstName+"&lastName="+lastName+"&password="+password+"&phone="+phone+"&ip="+ip);
 							Request request = new Request.Builder()
 							  .url("https://serviceamedia.com/api/v2/leads/")
 							  .method("POST", body)
